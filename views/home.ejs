@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/style.css">
+    <title>Nirvana</title>
+</head>
+
+<body onload="startTime()">
+
+    <div id="container">
+        <div class="date" id="currentdate"></div>
+        <div class="display" id="currenttime"></div>
+
+        <div id="btn">
+            <a href="/add">
+                <button>Add New Quote</button>
+            </a>
+        </div>
+
+      <!-- QUOTES GALLERY -->
+<section class="gallery">
+
+    <% if (quotes.length === 0) { %>
+        <div class="empty-state">
+            <p>No Quotes added yet.</p>
+        </div>
+    <% } else { %>
+
+        <div class="grid">
+            <% quotes.forEach(q => { %>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="quote-text">"<%= q.quote %>"</h3>
+                        <p class="author">— <i><%= q.author %></i></p>
+
+                        <div class="actions">
+                            <a href="/edit/<%= q._id %>" class="btn small edit">Edit</a>
+
+                            <form action="/delete/<%= q._id %>" method="POST">
+                                <button class="btn danger small">Delete</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            <% }) %>
+        </div>
+
+        <!-- PAGINATION -->
+        <div class="pagination">
+            <% if (current > 1) { %>
+                <a class="page-btn" href="/?page=<%= current - 1 %>">Previous</a>
+            <% } else { %>
+                <span class="page-btn disabled">Previous</span>
+            <% } %>
+
+            <span class="page-number">Page <%= current %> of <%= pages %></span>
+
+            <% if (current < pages) { %>
+                <a class="page-btn" href="/?page=<%= current + 1 %>">Next</a>
+            <% } else { %>
+                <span class="page-btn disabled">Next</span>
+            <% } %>
+        </div>
+
+    <% } %>
+
+</section>
+
+    </div>
+
+    <script src="/main.js"></script>
+</body>
+</html>

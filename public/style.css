@@ -1,0 +1,257 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300..900&display=swap');
+
+/* -----------------------------------
+   GLOBAL PAGE STYLING
+------------------------------------ */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    background-image: url('starry.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    font-family: "Merienda", cursive;
+    overflow-x: hidden;
+}
+
+/* -----------------------------------
+   HEADER CLOCK + DATE
+------------------------------------ */
+#container {
+    margin-top: 20px;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.display {
+    font-size: 2.5rem;
+    width: 80%;
+    border-bottom: thin solid rgba(255,255,255,0.2);
+    display: inline-block;
+    padding: 10px 30px;
+    opacity: 0.9;
+}
+
+.date {
+    font-size: 1.3rem;
+    opacity: .7;
+    letter-spacing: 2px;
+    font-family: Georgia, serif;
+}
+#btn  {
+  text-align: center;
+    display: block;
+    width: 100%;
+    margin: 10px auto;
+}
+button {
+    outline: none;
+    padding-top: 5px;
+    text-decoration: none;
+    opacity: 0.6;
+    background-color: black;
+    color: white;
+    border: thin solid white;
+    height: 40px;
+    width: 100px;
+    border-radius: 2px;
+    transition: 0.5s;
+    padding-bottom: 5px;
+}
+  
+button:hover {
+    background-color: white;
+    color: black;
+    border: thin solid black;
+    opacity: 0.8;
+  }
+
+/* -----------------------------------
+   QUOTE GRID
+------------------------------------ */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 30px 40px;
+    width: 90%;
+    margin: 0px auto;
+    /* outline: thin solid whitesmoke; */
+  }
+  
+  /* -----------------------------------
+  QUOTE CARD (NEW SMALLER VERSION)
+  ------------------------------------ */
+  .card {
+    background: rgba(0, 0, 0, 0.55);
+    border: 1px solid rgba(255,255,255,0.12);
+    backdrop-filter: blur(6px);
+    color: white;
+    border-radius: 10px;
+    padding: 25px 20px;
+    text-align: center;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    max-width: 350px;
+    margin: auto;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 6px 20px rgba(0,0,0,0.35);
+}
+
+/* Reducer: quote too large → now controlled */
+.quote-text {
+    font-size: 1.6rem;
+    line-height: 1.4;
+}
+
+.author {
+    margin-top: 10px;
+    font-size: 0.9rem;
+    opacity: .9;
+    text-align: right;
+}
+
+/* Buttons inside card */
+.actions {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.btn {
+    padding: 7px 14px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.2s;
+    
+}
+
+.btn.small {
+    font-size: 0.8rem;
+}
+
+/* Edit button */
+.btn.edit {
+    background: #28a745;
+    width: 70px;
+    outline: thin solid white;
+}
+.btn.edit:hover {
+    background: #1f8a3a;
+     outline: none
+}
+
+/* Delete button */
+.btn.danger {
+    background: #c0392b;
+}
+.btn.danger:hover {
+    background: #992d22;
+}
+
+/* -----------------------------------
+   PAGINATION
+------------------------------------ */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.page-btn {
+    background: #007add;
+    color: white;
+    padding: 7px 14px;
+    border-radius: 6px;
+    text-decoration: none;
+}
+.page-btn:hover {
+    background: white;
+    color: black;
+}
+
+/* -----------------------------------
+   EDIT PAGE STYLING
+------------------------------------ */
+.edit-container {
+    width: 90%;
+    max-width: 550px;
+    margin: 100px auto;
+    padding: 25px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    color: white;
+}
+
+.edit-container h2 {
+    text-align: center;
+    margin-bottom: 15px;
+}
+
+.edit-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.edit-form input,
+.edit-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255,255,255,0.15);
+    color: white;
+}
+
+.edit-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.btn.secondary {
+    background: #777;
+}
+.btn.secondary:hover {
+    background: #555;
+}
+
+/* -----------------------------------
+   RESPONSIVE DESIGN
+------------------------------------ */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 650px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .quote-text {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .display {
+        font-size: 1.9rem;
+    }
+
+    .quote-text {
+        font-size: 1.2rem;
+    }
+}

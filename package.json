@@ -1,0 +1,35 @@
+{
+  "name": "quote_blog",
+  "version": "1.0.0",
+  "description": "\"A small CRUD app for favourite quotes using Node.js, MongoDB and EJS\",",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BenardOtokpa/Quote_Blog.git"
+  },
+  "keywords": [
+    "Nodejs",
+    "MOngoDB",
+    "ejs",
+    "crud",
+    "app",
+    "etc"
+  ],
+  "author": "Benard Otokpa",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BenardOtokpa/Quote_Blog/issues"
+  },
+  "homepage": "https://github.com/BenardOtokpa/Quote_Blog#readme",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0",
+    "mongoose": "^9.0.0",
+    "nodemon": "^3.1.11"
+  }
+}
