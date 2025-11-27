@@ -227,6 +227,98 @@ button:hover {
     background: #555;
 }
 
+
+/* -----------------------------------
+   ADD QUOTE PAGE STYLING
+------------------------------------ */
+
+.add-container {
+    width: 90%;
+    max-width: 550px;
+    margin: 120px auto 40px;
+    padding: 25px;
+    background: rgba(255,255,255,0.07);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    color: white;
+    animation: fadeIn 0.6s ease;
+}
+
+.add-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.add-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.add-form label {
+    font-size: 1rem;
+    opacity: 0.9;
+}
+
+.add-form input[type="text"],
+.add-form textarea {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.25);
+    background: rgba(255,255,255,0.12);
+    color: white;
+    font-size: 1rem;
+    transition: 0.3s ease;
+}
+
+.add-form input:focus,
+.add-form textarea:focus {
+    border-color: #4aa3ff;
+    box-shadow: 0 0 6px #4aa3ff;
+    outline: none;
+}
+
+.add-btn {
+    /* padding: 16px; */
+    background: #007add;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    margin-top: 10px;
+    border: thin solid white;
+    transition: 0.3s ease;
+}
+
+.add-btn:hover {
+    background: white;
+    color: black;
+}
+
+.back-link {
+    display: block;
+    margin-top: 20px;
+    color: #4aa3ff;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.85;
+}
+.back-link:hover {
+    text-decoration: underline;
+    opacity: 1;
+}
+
+/* Smooth fade animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* -----------------------------------
    RESPONSIVE DESIGN
 ------------------------------------ */
